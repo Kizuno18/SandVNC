@@ -1,0 +1,61 @@
+{
+  "mode": "Real Sandboxie boxes, synthetic Win32 targets; not PXG acceptance",
+  "held": [
+    {
+      "status": 0,
+      "epoch": 1,
+      "sequence": 2,
+      "pid": 28316,
+      "hwnd": 527652,
+      "width": 704,
+      "height": 361,
+      "keys": 1,
+      "modifiers": 0,
+      "x": 0,
+      "y": 0,
+      "applied": 0
+    },
+    {
+      "status": 0,
+      "epoch": 1,
+      "sequence": 2,
+      "pid": 22988,
+      "hwnd": 396578,
+      "width": 704,
+      "height": 361,
+      "keys": 1,
+      "modifiers": 0,
+      "x": 0,
+      "y": 0,
+      "applied": 0
+    }
+  ],
+  "released": {
+    "status": 0,
+    "epoch": 1,
+    "sequence": 3,
+    "pid": 28316,
+    "hwnd": 527652,
+    "width": 704,
+    "height": 361,
+    "keys": 0,
+    "modifiers": 0,
+    "x": 0,
+    "y": 0,
+    "applied": 1
+  },
+  "remaining": {
+    "status": 0,
+    "epoch": 1,
+    "sequence": 3,
+    "pid": 22988,
+    "hwnd": 396578,
+    "width": 704,
+    "height": 361,
+    "keys": 1,
+    "modifiers": 0,
+    "x": 0,
+    "y": 0,
+    "applied": 1
+  }
+}

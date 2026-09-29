@@ -1,0 +1,17 @@
+.cache/
+build/
+out/
+runtime/
+runtime-*.log
+third_party/
+**/obj/
+**/bin/
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+/evidence/*
+!/evidence/README.md
+!/evidence/reference/

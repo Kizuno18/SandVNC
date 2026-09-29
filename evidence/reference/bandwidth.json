@@ -1,0 +1,19 @@
+{
+  "mode": "Two Node HTTP frame readers, not browser or PXG",
+  "elapsedSeconds": 8.108991999999999,
+  "readers": [
+    {
+      "name": "A",
+      "bytes": 317088,
+      "frames": 72,
+      "unavailable": 2
+    },
+    {
+      "name": "B",
+      "bytes": 310696,
+      "frames": 71,
+      "unavailable": 2
+    }
+  ],
+  "totalMbps": 0.6193460296914833
+}

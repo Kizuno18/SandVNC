@@ -1,0 +1,290 @@
+{
+  "timestamp": "2026-09-09T10:16:12.939Z",
+  "mode": "Synthetic Win32 processes; this does not establish the historical failure cause",
+  "observations": [
+    {
+      "test": "A 250 ms sleep may still return a pre-input image",
+      "oldFrameSequence": 3,
+      "inputSequence": 4,
+      "freshFrameSequence": 9,
+      "nativeKeysDuringOldFrame": 1,
+      "status": "reproduced"
+    },
+    {
+      "iteration": 11,
+      "states": [
+        {
+          "name": "A",
+          "pid": 26620,
+          "hwnd": 7080970,
+          "fault": null,
+          "state": {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 74,
+            "pid": 26620,
+            "hwnd": 7080970,
+            "width": 704,
+            "height": 361,
+            "keys": 0,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 108
+          },
+          "frames": 138,
+          "bytesSent": 1748093,
+          "captureWallMs": 2952.9514999999997,
+          "frameAgeMs": 63,
+          "pendingFrame": null
+        },
+        {
+          "name": "B",
+          "pid": 26208,
+          "hwnd": 4721774,
+          "fault": null,
+          "state": {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 72,
+            "pid": 26208,
+            "hwnd": 4721774,
+            "width": 704,
+            "height": 361,
+            "keys": 1,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 73
+          },
+          "frames": 128,
+          "bytesSent": 926912,
+          "captureWallMs": 2612.992999999999,
+          "frameAgeMs": 94,
+          "pendingFrame": null
+        }
+      ],
+      "frames": [
+        [
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 136,
+            "hash": "478b3e8856d9615247b356fa44ef74eac0c7cdc18c1087c78fc3dc0fc5488913"
+          },
+          {
+            "epoch": 6,
+            "sequence": 70,
+            "number": 126,
+            "hash": "7a64956871b5ed4ddd856e03a1ac45c4626c1100581adc13e17c30d3c3b24719"
+          }
+        ],
+        [
+          {
+            "epoch": 6,
+            "sequence": 72,
+            "number": 137,
+            "hash": "1051157dad678386bb004ae96613e771855f4f16c10da63dc4ea12aec37dc89b"
+          },
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 127,
+            "hash": "991cf802aa6fd314bbc772158a0f2e87439e3e7e67c4c3024f6c533cfa052dfb"
+          }
+        ],
+        [
+          {
+            "epoch": 6,
+            "sequence": 73,
+            "number": 138,
+            "hash": "feca3306a64071d2305c9fa043afa4e98ac441933ee787df0e81224699b04b63"
+          },
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 127,
+            "hash": "991cf802aa6fd314bbc772158a0f2e87439e3e7e67c4c3024f6c533cfa052dfb"
+          }
+        ]
+      ]
+    },
+    {
+      "debug": {
+        "iteration": 11,
+        "reset": [
+          {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 70,
+            "pid": 26620,
+            "hwnd": 7080970,
+            "width": 704,
+            "height": 361,
+            "keys": 0,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 105
+          },
+          {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 69,
+            "pid": 26208,
+            "hwnd": 4721774,
+            "width": 704,
+            "height": 361,
+            "keys": 0,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 71
+          }
+        ],
+        "empty": [
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 136,
+            "hash": "478b3e8856d9615247b356fa44ef74eac0c7cdc18c1087c78fc3dc0fc5488913"
+          },
+          {
+            "epoch": 6,
+            "sequence": 70,
+            "number": 126,
+            "hash": "7a64956871b5ed4ddd856e03a1ac45c4626c1100581adc13e17c30d3c3b24719"
+          }
+        ],
+        "down": [
+          {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 72,
+            "pid": 26620,
+            "hwnd": 7080970,
+            "width": 704,
+            "height": 361,
+            "keys": 1,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 106
+          },
+          {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 71,
+            "pid": 26208,
+            "hwnd": 4721774,
+            "width": 704,
+            "height": 361,
+            "keys": 1,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 72
+          }
+        ],
+        "both": [
+          {
+            "epoch": 6,
+            "sequence": 72,
+            "number": 137,
+            "hash": "1051157dad678386bb004ae96613e771855f4f16c10da63dc4ea12aec37dc89b"
+          },
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 127,
+            "hash": "991cf802aa6fd314bbc772158a0f2e87439e3e7e67c4c3024f6c533cfa052dfb"
+          }
+        ],
+        "up": {
+          "status": 0,
+          "epoch": 6,
+          "sequence": 73,
+          "pid": 26620,
+          "hwnd": 7080970,
+          "width": 704,
+          "height": 361,
+          "keys": 0,
+          "modifiers": 0,
+          "x": 0,
+          "y": 0,
+          "applied": 107
+        },
+        "end": [
+          {
+            "epoch": 6,
+            "sequence": 73,
+            "number": 138,
+            "hash": "feca3306a64071d2305c9fa043afa4e98ac441933ee787df0e81224699b04b63"
+          },
+          {
+            "epoch": 6,
+            "sequence": 71,
+            "number": 127,
+            "hash": "991cf802aa6fd314bbc772158a0f2e87439e3e7e67c4c3024f6c533cfa052dfb"
+          }
+        ]
+      },
+      "current": [
+        {
+          "name": "A",
+          "pid": 26620,
+          "hwnd": 7080970,
+          "fault": null,
+          "state": {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 74,
+            "pid": 26620,
+            "hwnd": 7080970,
+            "width": 704,
+            "height": 361,
+            "keys": 0,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 108
+          },
+          "frames": 138,
+          "bytesSent": 1748093,
+          "captureWallMs": 2952.9514999999997,
+          "frameAgeMs": 79,
+          "pendingFrame": null
+        },
+        {
+          "name": "B",
+          "pid": 26208,
+          "hwnd": 4721774,
+          "fault": null,
+          "state": {
+            "status": 0,
+            "epoch": 6,
+            "sequence": 72,
+            "pid": 26208,
+            "hwnd": 4721774,
+            "width": 704,
+            "height": 361,
+            "keys": 1,
+            "modifiers": 0,
+            "x": 0,
+            "y": 0,
+            "applied": 73
+          },
+          "frames": 128,
+          "bytesSent": 926912,
+          "captureWallMs": 2612.992999999999,
+          "frameAgeMs": 110,
+          "pendingFrame": null
+        }
+      ]
+    },
+    {
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'feca3306a64071d2305c9fa043afa4e98ac441933ee787df0e81224699b04b63'\n- '478b3e8856d9615247b356fa44ef74eac0c7cdc18c1087c78fc3dc0fc5488913'\n\n    at file:///<workspace>/tests/frame-order.mjs:94:16\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+    }
+  ]
+}

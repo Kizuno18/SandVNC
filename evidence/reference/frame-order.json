@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-09-09T10:49:06.421Z",
+  "mode": "Synthetic Win32 processes; this does not establish the historical failure cause",
+  "observations": [
+    {
+      "test": "A 250 ms sleep may still return a pre-input image",
+      "oldFrameSequence": 2,
+      "inputSequence": 4,
+      "freshFrameSequence": 9,
+      "nativeKeysDuringOldFrame": 1,
+      "status": "reproduced"
+    },
+    {
+      "test": "Frame-sequence synchronized independent holds",
+      "iterations": 30,
+      "status": "passed"
+    }
+  ]
+}

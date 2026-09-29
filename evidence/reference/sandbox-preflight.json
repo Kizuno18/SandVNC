@@ -1,0 +1,11 @@
+{
+  "operation": "Remove an absent random section (permission probe only)",
+  "before": "0xC0000034",
+  "update": "0xC0000022",
+  "after": "0xC0000034",
+  "sessionLeaderQuery": "0x00000000",
+  "sessionLeaderPid": 3780,
+  "callerPid": 19536,
+  "configFileWritten": false,
+  "existingSectionChanged": false
+}

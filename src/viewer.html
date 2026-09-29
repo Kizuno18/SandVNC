@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SandVnc diagnostic viewer</title>
+<style>
+body { font: 15px system-ui; background: #16191c; color: #eee; margin: 24px; }
+button { padding: 8px 16px; margin-right: 8px; }
+img { display: block; max-width: 100%; height: auto; margin-top: 16px; touch-action: none; outline: 1px solid #555; }
+pre { white-space: pre-wrap; }
+</style>
+<h1>SandVnc — local diagnostic</h1>
+<p id="mode">Connect to identify the target mode; full PXG acceptance remains unverified</p>
+<button id="connect">Connect / take control</button><button id="disconnect">Disconnect</button>
+<span id="status">Disconnected</span>
+<img id="view" tabindex="0" draggable="false" alt="Authorized application surface">
+<pre id="metrics"></pre>
+<script>
+const token = location.hash.slice(1);
+history.replaceState(null, '', '/');
+const view = document.querySelector('#view'), status = document.querySelector('#status');
+let socket, sequence = 0, frame = 0, lease = false, loading = false, currentUrl;
+let bytes = 0, frames = 0, decodeMs = 0, requestMs = 0, adapterMs = 0;
+const started = performance.now();
+function send(type, a = 0, b = 0) {
+    if (!lease || socket?.readyState !== WebSocket.OPEN) return;
+    if (socket.bufferedAmount > 4096) { disconnect(); return; }
+    socket.send(JSON.stringify({ type, sequence: ++sequence, a, b, frame }));
+}
+function disconnect() { lease = false; socket?.close(); status.textContent = 'Disconnected'; }
+document.querySelector('#disconnect').onclick = disconnect;
+document.querySelector('#connect').onclick = () => {
+    disconnect();
+    const connection = new WebSocket(`${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/input`);
+    socket = connection;
+    connection.onopen = () => connection.send(token);
+    connection.onmessage = event => {
+        if (socket !== connection) return;
+        const message = JSON.parse(event.data);
+        if (message.type === 'lease') { sequence = 0; lease = true; document.querySelector('#mode').textContent = message.mode; status.textContent = `Controlling ${message.box}, PID ${message.pid}`; view.focus(); }
+        if (message.type === 'ack') adapterMs = message.adapterMs;
+    };
+    connection.onclose = () => { if (socket === connection) { lease = false; status.textContent = 'Disconnected / revoked'; } };
+};
+const special = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40, Shift: 16, Control: 17, Alt: 18,
+    Enter: 13, Escape: 27, Tab: 9, Backspace: 8, Delete: 46, Home: 36, End: 35, PageUp: 33, PageDown: 34, ' ': 32 };
+function vk(event) {
+    if (special[event.key]) return special[event.key];
+    if (/^Key[A-Z]$/.test(event.code)) return event.code.charCodeAt(3);
+    if (/^Digit[0-9]$/.test(event.code)) return event.code.charCodeAt(5);
+    if (/^F([1-9]|1[0-2])$/.test(event.key)) return 111 + Number(event.key.slice(1));
+    return 0;
+}
+view.onkeydown = event => {
+    event.preventDefault();
+    const key = vk(event); if (key) send('key', key, 1);
+    if (event.key.length === 1 && !event.ctrlKey && !event.altKey && !event.metaKey) send('text', event.key.charCodeAt(0));
+};
+view.onkeyup = event => { event.preventDefault(); const key = vk(event); if (key) send('key', key, 0); };
+function position(event) {
+    const rect = view.getBoundingClientRect();
+    send('move', Math.max(0, Math.min(view.naturalWidth - 1, Math.floor((event.clientX - rect.left) * view.naturalWidth / rect.width))),
+        Math.max(0, Math.min(view.naturalHeight - 1, Math.floor((event.clientY - rect.top) * view.naturalHeight / rect.height))));
+}
+view.onpointermove = event => { if (event.pointerType === 'mouse') position(event); };
+view.onpointerdown = event => { event.preventDefault(); view.focus(); view.setPointerCapture(event.pointerId); position(event); send('button', event.button, 1); };
+view.onpointerup = event => { position(event); send('button', event.button, 0); if (view.hasPointerCapture(event.pointerId)) view.releasePointerCapture(event.pointerId); };
+view.onpointercancel = disconnect;
+view.oncontextmenu = event => event.preventDefault();
+window.onblur = disconnect;
+document.onvisibilitychange = () => { if (document.hidden) disconnect(); };
+setInterval(() => send('pulse'), 500);
+setInterval(async () => {
+    if (loading || !token) return;
+    loading = true;
+    const start = performance.now();
+    try {
+        const response = await fetch('/frame', { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(1800) });
+        if (!response.ok) throw Error(`Capture unavailable (${response.status})`);
+        const blob = await response.blob(); bytes += blob.size;
+        const url = URL.createObjectURL(blob);
+        const image = new Image(); image.src = url;
+        const decoding = performance.now(); await image.decode(); decodeMs += performance.now() - decoding;
+        view.src = url; if (currentUrl) URL.revokeObjectURL(currentUrl); currentUrl = url;
+        frame = Number(response.headers.get('X-Frame')); frames++; requestMs = performance.now() - start;
+    } catch (error) { view.removeAttribute('src'); frame = 0; status.textContent = error.message; }
+    finally { loading = false; }
+    document.querySelector('#metrics').textContent = JSON.stringify({ frames, bytes, bandwidthMbps: bytes * 8 / ((performance.now() - started) * 1000),
+        totalDecodeMs: decodeMs, lastFetchDecodeMs: requestMs, lastAdapterAckMs: adapterMs, note: 'ACK and fetch timings are not input-to-photon latency' }, null, 2);
+}, 100);
+</script>
+</html>

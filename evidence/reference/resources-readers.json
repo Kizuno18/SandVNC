@@ -1,0 +1,85 @@
+{
+  "timestamp": "2026-09-09T10:48:53.1454851Z",
+  "mode": "Synthetic readers; no browser; not PXG acceptance",
+  "elapsedSeconds": 5.0121481,
+  "processes": [
+    {
+      "pid": 12748,
+      "name": "SandVnc",
+      "oneCoreCpuPercent": 34.603426822124426,
+      "workingSetBytes": 79765504,
+      "privateBytes": 37498880
+    },
+    {
+      "pid": 22464,
+      "name": "input-probe",
+      "oneCoreCpuPercent": 8.728792351526883,
+      "workingSetBytes": 10088448,
+      "privateBytes": 1855488
+    },
+    {
+      "pid": 28568,
+      "name": "input-probe",
+      "oneCoreCpuPercent": 10.910990439408604,
+      "workingSetBytes": 11669504,
+      "privateBytes": 2019328
+    }
+  ],
+  "gpu": null,
+  "gpuErrors": [],
+  "broker": [
+    {
+      "name": "A",
+      "pid": 22464,
+      "hwnd": 1969396,
+      "fault": null,
+      "state": {
+        "status": 0,
+        "epoch": 1,
+        "sequence": 97,
+        "pid": 22464,
+        "hwnd": 1969396,
+        "width": 704,
+        "height": 361,
+        "keys": 0,
+        "modifiers": 0,
+        "x": 0,
+        "y": 0,
+        "applied": 0
+      },
+      "frames": 83,
+      "bytesSent": 317088,
+      "captureWallMs": 1278.3514999999993,
+      "frameAgeMs": 16,
+      "pendingFrame": null
+    },
+    {
+      "name": "B",
+      "pid": 28568,
+      "hwnd": 462114,
+      "fault": null,
+      "state": {
+        "status": 0,
+        "epoch": 1,
+        "sequence": 97,
+        "pid": 28568,
+        "hwnd": 462114,
+        "width": 704,
+        "height": 361,
+        "keys": 0,
+        "modifiers": 0,
+        "x": 0,
+        "y": 0,
+        "applied": 0
+      },
+      "frames": 83,
+      "bytesSent": 310696,
+      "captureWallMs": 1345.9168000000004,
+      "frameAgeMs": 31,
+      "pendingFrame": null
+    }
+  ],
+  "clientBaseline": null,
+  "browserCpu": null,
+  "inputToPhotonMs": null
+}

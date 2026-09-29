@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-09-09T10:00:41.235Z",
+  "mode": "Synthetic native probe, not PXG",
+  "test": "B rendered image stays unchanged after A releases W",
+  "status": "Failed once; subsequent run passed without an implementation change",
+  "actualSha256": "4f0c0b4f6563d1061ed6a4daca1b111df274797f79d6475a9edc473229c32fca",
+  "expectedSha256": "74a978758f5060d65d0f59deb24977cf03510a0a1939455a9513c42ed1157269",
+  "observed": "B's adapter reported one held key before the image assertion. The failed post-release image was not retained in that first run; later runs now save it.",
+  "rootCause": null,
+  "qualification": "Unresolved intermittent image/test behavior. A passing rerun does not establish a fix."
+}

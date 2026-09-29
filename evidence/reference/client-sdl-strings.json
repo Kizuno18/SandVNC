@@ -1,0 +1,42 @@
+{
+  "file": "<client-install>/win32/pxgme32.exe",
+  "size": 21750784,
+  "method": "Exact byte searches; no executable modification or execution",
+  "results": [
+    {
+      "needle": "SDL-2",
+      "offset": -1,
+      "value": null
+    },
+    {
+      "needle": "SDL revision",
+      "offset": -1,
+      "value": null
+    },
+    {
+      "needle": "SDL2",
+      "offset": -1,
+      "value": null
+    },
+    {
+      "needle": "SDL_MOUSE_RELATIVE_MODE_WARP",
+      "offset": 16981678,
+      "value": "SDL_MOUSE_RELATIVE_MODE_WARP"
+    },
+    {
+      "needle": "SDL_JOYSTICK_RAWINPUT",
+      "offset": 16266495,
+      "value": "SDL_JOYSTICK_RAWINPUT"
+    },
+    {
+      "needle": "SDL_WINDOWS_RAW_KEYBOARD",
+      "offset": -1,
+      "value": null
+    },
+    {
+      "needle": "SDL_MOUSE_FOCUS_CLICKTHROUGH",
+      "offset": 16264613,
+      "value": "SDL_MOUSE_FOCUS_CLICKTHROUGH"
+    }
+  ]
+}

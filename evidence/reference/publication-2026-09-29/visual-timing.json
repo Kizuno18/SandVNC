@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-09-29T19:29:26.552Z",
+  "mode": "Synthetic native probe only; input-to-changed-PNG at HTTP client, excludes browser decode/display and network WAN",
+  "trials": [
+    {
+      "ackMs": 3.1725999999999885,
+      "changedPngReceivedMs": 63.61869999999999
+    },
+    {
+      "ackMs": 1.999400000000037,
+      "changedPngReceivedMs": 62.110700000000065
+    },
+    {
+      "ackMs": 1.4510999999999967,
+      "changedPngReceivedMs": 77.42359999999996
+    },
+    {
+      "ackMs": 1.8764999999999645,
+      "changedPngReceivedMs": 46.29399999999998
+    },
+    {
+      "ackMs": 1.6678000000000566,
+      "changedPngReceivedMs": 62.50080000000003
+    },
+    {
+      "ackMs": 1.5413999999998396,
+      "changedPngReceivedMs": 77.91639999999984
+    },
+    {
+      "ackMs": 2.362799999999879,
+      "changedPngReceivedMs": 74.31050000000005
+    },
+    {
+      "ackMs": 1.6012000000000626,
+      "changedPngReceivedMs": 76.99950000000013
+    },
+    {
+      "ackMs": 1.2346000000000004,
+      "changedPngReceivedMs": 47.12940000000003
+    },
+    {
+      "ackMs": 1.3790999999998803,
+      "changedPngReceivedMs": 45.95539999999983
+    }
+  ]
+}

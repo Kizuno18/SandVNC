@@ -1,0 +1,144 @@
+{
+  "timestamp": "2026-09-09T10:49:13.673Z",
+  "mode": "synthetic native processes, NOT Sandboxie/PXG acceptance",
+  "results": [
+    {
+      "name": "Two distinct native processes with simultaneous control leases",
+      "status": "passed",
+      "evidence": {
+        "pids": [
+          22464,
+          28568
+        ]
+      }
+    },
+    {
+      "name": "Rapid down/up transitions preserve message-time keyboard state",
+      "status": "passed",
+      "evidence": {
+        "transitions": 200,
+        "renderedErrors": 0
+      }
+    },
+    {
+      "name": "Concurrent W hold; A release preserves B state and B rendered pixels",
+      "status": "passed",
+      "evidence": {
+        "bKeys": 1,
+        "bFrameUnchanged": true
+      }
+    },
+    {
+      "name": "A Ctrl + drag while B types, clicks and moves without Ctrl",
+      "status": "passed",
+      "evidence": {
+        "a": {
+          "status": 0,
+          "epoch": 6,
+          "sequence": 212,
+          "pid": 22464,
+          "hwnd": 1969396,
+          "width": 704,
+          "height": 361,
+          "keys": 2,
+          "modifiers": 2,
+          "x": 100,
+          "y": 120,
+          "applied": 308
+        },
+        "b": {
+          "status": 0,
+          "epoch": 4,
+          "sequence": 10,
+          "pid": 28568,
+          "hwnd": 462114,
+          "width": 704,
+          "height": 361,
+          "keys": 1,
+          "modifiers": 0,
+          "x": 250,
+          "y": 160,
+          "applied": 66
+        }
+      }
+    },
+    {
+      "name": "A capture delayed 4 seconds while both input channels continue",
+      "status": "passed",
+      "evidence": {
+        "frozenFrame": 201,
+        "roundTripMs": [
+          0.7636999999999716,
+          0.7044000000000779,
+          0.5978999999999814,
+          0.5528000000001612,
+          0.697400000000016,
+          0.6371000000001459,
+          0.7096999999998843,
+          0.7696000000000822,
+          0.6130000000000564,
+          0.5389999999999873
+        ]
+      }
+    },
+    {
+      "name": "Reconnect retains process, resets input and revokes old connection",
+      "status": "passed",
+      "evidence": {
+        "oldEpoch": 6,
+        "newEpoch": 7,
+        "pid": 22464
+      }
+    },
+    {
+      "name": "Disconnect does not terminate the target",
+      "status": "passed",
+      "evidence": {
+        "pid": 22464
+      }
+    },
+    {
+      "name": "Unauthorized capture and cross-origin requests rejected",
+      "status": "passed",
+      "evidence": {
+        "unauthorized": 401,
+        "crossOrigin": 403
+      }
+    },
+    {
+      "name": "Duplicate sequence closes only the offending controller",
+      "status": "passed",
+      "evidence": {}
+    },
+    {
+      "name": "Missing viewer heartbeat releases keys and closes its lease",
+      "status": "passed",
+      "evidence": {
+        "keys": 0
+      }
+    },
+    {
+      "name": "Nonremote keyboard, character and mouse messages are filtered in the native probe",
+      "status": "passed",
+      "evidence": {
+        "imageUnchanged": true,
+        "physicalHardwareTest": false
+      }
+    },
+    {
+      "name": "Resize rejects old frame geometry and permits a fresh binding",
+      "status": "passed",
+      "evidence": {
+        "oldFrame": 206,
+        "newFrame": 212
+      }
+    },
+    {
+      "name": "Destroy/recreate A window retires its session while B input continues",
+      "status": "passed",
+      "evidence": {
+        "aCapture": 503
+      }
+    }
+  ]
+}

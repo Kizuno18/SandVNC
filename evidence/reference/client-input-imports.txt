@@ -1,0 +1,15 @@
+d3d9.dll
+D3DCOMPILER_47.dll
+2 D3DCompile
+C0 DispatchMessageW
+126 GetAsyncKeyState
+144 GetCursorPos
+16B GetKeyState
+170 GetKeyboardState
+18C GetMessageW
+1B7 GetRawInputData
+1B8 GetRawInputDeviceInfoA
+1BA GetRawInputDeviceList
+2AF PeekMessageW
+2F6 RegisterRawInputDevices
+330 SetCursorPos

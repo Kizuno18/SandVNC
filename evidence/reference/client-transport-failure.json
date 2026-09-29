@@ -1,0 +1,5 @@
+{
+  "mode": "PXG transport experiment",
+  "status": "failed",
+  "error": "System.IO.IOException: Adapter handshake failed: {\u0022Status\u0022:4,\u0022Epoch\u0022:0,\u0022Sequence\u0022:0,\u0022Pid\u0022:24320,\u0022Hwnd\u0022:0,\u0022Width\u0022:0,\u0022Height\u0022:0,\u0022Keys\u0022:0,\u0022Modifiers\u0022:0,\u0022X\u0022:0,\u0022Y\u0022:0,\u0022Applied\u0022:0}\r\n   at SandVnc.BoxSession.Launch() in <workspace>\\src\\BoxSession.cs:line 66\r\n   at Program.\u003CMain\u003E$(String[] args) in <workspace>\\src\\Program.cs:line 57"
+}

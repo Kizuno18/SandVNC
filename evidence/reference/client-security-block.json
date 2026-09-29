@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-09T10:46:55.6671405Z",
+  "detections": [
+    {
+      "ThreatID": 2147738096,
+      "InitialDetectionTime": "2026-09-09T07:42:57.133-03:00",
+      "LastThreatStatusChangeTime": "2026-09-09T07:43:28.612-03:00",
+      "ActionSuccess": true,
+      "Resources": [
+        "file:_<workspace>\\runtime\\client\\win32\\pxgme32.exe",
+        "process:_pid:15944,ProcessStart:134334241703776438",
+        "process:_pid:17436,ProcessStart:134334241703806456"
+      ]
+    }
+  ],
+  "threats": [
+    {
+      "ThreatID": 2147738096,
+      "ThreatName": "Behavior:Win32/DefenseEvasion.A!ml",
+      "IsActive": false,
+      "DidThreatExecute": true
+    }
+  ],
+  "clientCopyExists": false,
+  "securitySettingsChanged": false,
+  "originalExecutableVerification": "The final Get-FileHash read of <client-install>\\win32\\pxgme32.exe was also denied by Windows with a virus or potentially unwanted software error. No restoration or security changes were attempted."
+}
